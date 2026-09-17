@@ -14,6 +14,13 @@ table {
   margin: 50px auto;
 }
 
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  color: var(--grey);
+  font-size: 1.4rem;
+}
+
 table th {
   padding: 10px 15px;
   font-size: 1.6rem;

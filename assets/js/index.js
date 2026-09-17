@@ -29,26 +29,38 @@ const body = document.querySelector("body");
 const table = document.createElement("table");
 body.append(table);
 
+const caption = document.createElement("caption");
+table.append(caption);
+caption.textContent = "Курс валют";
+
 const tableHeader = document.createElement("thead");
 table.append(tableHeader);
+
+const trHeader = document.createElement("tr");
+tableHeader.append(trHeader);
 
 const symbolName = document.createElement("th");
 const lastPriceName = document.createElement("th");
 const priceChangePercentName = document.createElement("th");
 const quoteVolumeName = document.createElement("th");
-tableHeader.append(symbolName);
-tableHeader.append(lastPriceName);
-tableHeader.append(priceChangePercentName);
-tableHeader.append(quoteVolumeName);
+trHeader.append(
+  symbolName,
+  lastPriceName,
+  priceChangePercentName,
+  quoteVolumeName,
+);
 symbolName.textContent = "Торгова пара";
 lastPriceName.textContent = "Курс";
 priceChangePercentName.textContent = "Зміна 24г (%)";
 quoteVolumeName.textContent = "Об'єм 24г";
 
+const tbody = document.createElement("tbody");
+table.append(tbody);
+
 function generateTable(data) {
   data.slice(0, 20).forEach((item) => {
     const tr = document.createElement("tr");
-    table.append(tr);
+    tbody.append(tr);
 
     const symbol = document.createElement("td");
     symbol.textContent = item.symbol;
@@ -56,7 +68,7 @@ function generateTable(data) {
     symbol.classList.add("leftText");
 
     const lastPrice = document.createElement("td");
-    lastPrice.textContent = item.lastPrice;
+    lastPrice.textContent = parseFloat(item.lastPrice);
     tr.append(lastPrice);
 
     const priceChangePercent = document.createElement("td");
@@ -64,7 +76,7 @@ function generateTable(data) {
     tr.append(priceChangePercent);
 
     const quoteVolume = document.createElement("td");
-    quoteVolume.textContent = item.quoteVolume;
+    quoteVolume.textContent = Number(item.quoteVolume).toFixed(4);
     tr.append(quoteVolume);
   });
 }
