@@ -53,7 +53,7 @@ function generateTable(data) {
     const symbol = document.createElement("td");
     symbol.textContent = item.symbol;
     tr.append(symbol);
-    symbol.classList.add("rightText");
+    symbol.classList.add("leftText");
 
     const lastPrice = document.createElement("td");
     lastPrice.textContent = item.lastPrice;

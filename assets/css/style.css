@@ -1,0 +1,33 @@
+:root {
+  --white: #eaecef;
+  --grey: #2b313a;
+  --lightgrey: #848e9c;
+}
+
+table {
+  text-align: center;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 1.2rem;
+  color: var(--white);
+  background-color: var(--grey);
+  border-radius: 20px;
+  margin: 50px auto;
+}
+
+table th {
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--lightgrey);
+  border-bottom: 1px solid var(--lightgrey);
+}
+
+table td {
+  padding: 5px 20px;
+}
+
+.leftText {
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
